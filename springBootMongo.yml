@@ -12,7 +12,7 @@ spec:
         name: springboot
     spec:
       containers:
-      - image: agunuworld/spring-boot-mongo
+      - image: agunuworld/springapp
         name: springboot
         ports:
         - name: springboot
