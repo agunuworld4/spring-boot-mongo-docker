@@ -61,7 +61,7 @@ metadata:
   namespace: monitoring
 spec:
   accessModes:
-    - "ReadOnlyMany"
+    - "ReadWriteOnce"
   resources:
     requests:
       storage: "4Gi"
