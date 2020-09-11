@@ -102,7 +102,7 @@ pipeline
             }
 
 
-       stage('Deploy To Kubernetes'){
+       stage('CopyFile To K8s'){
            steps{
                sshagent(['eksclimasternodes']) {
                sh "scp -o StrictHostKeyChecking=no  metric.yml prom.yml grafa.yml ec2-user@18.191.13.231:/home/ec2-user/"
