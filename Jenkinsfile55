@@ -118,9 +118,9 @@ pipeline
                sh "scp -o StrictHostKeyChecking=no  javawebapp-deployment.yml ec2-user@13.59.17.51:/home/ec2-user/"
                script{
                    try{
-                       sh "ssh ec2-user@13.59.17.51 kubectl apply -f javawebapp-deployment.yml"
+                       sh "ssh ec2-user@13.59.17.51 kubectl apply -f ."
                    }catch(error){
-                       sh "ssh ec2-user@13.59.17.51 kubectl create -f javawebapp-deployment.yml"
+                       sh "ssh ec2-user@13.59.17.51 kubectl create -f ."
                    }
                }
             }
