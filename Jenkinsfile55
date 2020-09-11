@@ -6,7 +6,7 @@ pipeline
     environment 
     {
         VERSION = "${BUILD_NUMBER}"
-        PROJECT = 'mvnproject'
+        PROJECT = 'mvncontainer'
         IMAGE = "$PROJECT:$VERSION"
         ECRURL = 'http://311301640590.dkr.ecr.us-east-2.amazonaws.com/mvncontainer'
         ECRCRED = 'ecr:us-east-2:myAwsAuthenticationPluginLogins'
