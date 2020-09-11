@@ -4,6 +4,7 @@ metadata:
   labels:
     name: springboot
   name: spring-controller
+  namespace: mvnwork
 spec:
   replicas: 1
   template:
@@ -25,6 +26,7 @@ metadata:
   labels:
     name: springboot
   name: springboot
+  namespace: mvnwork
 spec:
   type: LoadBalancer
   ports:
@@ -41,6 +43,7 @@ metadata:
   labels:
     name: mongo
   name: mongo-controller
+  namespace: mvnwork
 spec:
   replicas: 1
   template:
@@ -71,6 +74,7 @@ metadata:
   labels:
     name: mongo
   name: mongo
+  namespace: mvnwork
 spec:
   type: ClusterIP
   ports:
