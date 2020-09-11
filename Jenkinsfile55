@@ -8,7 +8,7 @@ pipeline
         VERSION = "${BUILD_NUMBER}"
         PROJECT = 'mvnproject'
         IMAGE = "$PROJECT:$VERSION"
-        ECRURL = 'http://311301640590.dkr.ecr.us-east-2.amazonaws.com/mvnproject'
+        ECRURL = 'http://311301640590.dkr.ecr.us-east-2.amazonaws.com/mvncontainer'
         ECRCRED = 'ecr:us-east-2:myAwsAuthenticationPluginLogins'
         mavenHome = tool 'myMaven4'
 		PATH = "$mavenHome/bin:$PATH"
@@ -101,6 +101,14 @@ pipeline
                }
             }
 
+
+       stage('Deploy To Kubernetes'){
+           steps{
+               sshagent(['eksclimasternodes']) {
+               sh "scp -o StrictHostKeyChecking=no  metric.yml prom.yml grafa.yml ec2-user@18.191.13.231:/home/ec2-user/"
+            }
+           }
+       } 
 
        stage('Deploy To Kubernetes'){
            steps{
